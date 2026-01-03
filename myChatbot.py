@@ -1,5 +1,6 @@
 import streamlit as st
-from google import genai
+import google.generativeai as genai
+
 
 client = genai.Client(api_key=st.secrets["GEMINI_API_KEY"])
 
@@ -23,3 +24,4 @@ if prompt:
 for role, msg in st.session_state.chat:
     with st.chat_message(role):
         st.write(msg)
+
